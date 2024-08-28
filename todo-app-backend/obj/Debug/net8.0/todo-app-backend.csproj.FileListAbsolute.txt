@@ -113,6 +113,7 @@
 /Users/krithika/Desktop/jarvis-electron/jarvis-apps/todo-app/todo-app-backend/obj/Debug/net8.0/todo-app-backend.csproj.CoreCompileInputs.cache
 /Users/krithika/Desktop/jarvis-electron/jarvis-apps/todo-app/todo-app-backend/obj/Debug/net8.0/todo-app-backend.MvcApplicationPartsAssemblyInfo.cs
 /Users/krithika/Desktop/jarvis-electron/jarvis-apps/todo-app/todo-app-backend/obj/Debug/net8.0/todo-app-backend.MvcApplicationPartsAssemblyInfo.cache
+/Users/krithika/Desktop/jarvis-electron/jarvis-apps/todo-app/todo-app-backend/obj/Debug/net8.0/todo-app-backend.sourcelink.json
 /Users/krithika/Desktop/jarvis-electron/jarvis-apps/todo-app/todo-app-backend/obj/Debug/net8.0/staticwebassets.build.json
 /Users/krithika/Desktop/jarvis-electron/jarvis-apps/todo-app/todo-app-backend/obj/Debug/net8.0/staticwebassets.development.json
 /Users/krithika/Desktop/jarvis-electron/jarvis-apps/todo-app/todo-app-backend/obj/Debug/net8.0/staticwebassets/msbuild.todo-app-backend.Microsoft.AspNetCore.StaticWebAssets.props
