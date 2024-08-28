@@ -7,6 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
+    builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+    {
+        builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+    }));
+
+
 // Configure SQLite database
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
     opt.UseSqlite("Data Source=todo.db"));
@@ -33,6 +39,7 @@ else
     app.UseHsts();
 }
 
+app.UseCors("corsapp");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();

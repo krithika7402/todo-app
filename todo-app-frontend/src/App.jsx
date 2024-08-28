@@ -10,36 +10,52 @@ function App() {
   }, []);
 
   const fetchTasks = async () => {
-    const response = await fetch('https://localhost:5001/api/tasks');
-    const data = await response.json();
-    setTasks(data);
+    try {
+      const response = await fetch('http://localhost:5296/api/Tasks');
+      const data = await response.json();
+      setTasks(data);
+    } catch (error) {
+      console.error('Error fetching tasks:', error);
+    }
   };
 
   const handleAddTask = async () => {
     if (task.trim()) {
       const newTask = { text: task, completed: false };
-      await fetch('https://localhost:5001/api/tasks', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newTask),
-      });
-      setTask('');
-      fetchTasks();
+      try {
+        await fetch('http://localhost:5296/api/Tasks', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newTask),
+        });
+        setTask('');
+        fetchTasks();
+      } catch (error) {
+        console.error('Error adding task:', error);
+      }
     }
   };
 
   const handleToggleTask = async (id, completed) => {
-    await fetch(`https://localhost:5001/api/tasks/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ completed: !completed }),
-    });
-    fetchTasks();
+    try {
+      await fetch(`http://localhost:5296/api/Tasks/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ completed: !completed }),
+      });
+      fetchTasks();
+    } catch (error) {
+      console.error('Error updating task:', error);
+    }
   };
 
   const handleDeleteTask = async (id) => {
-    await fetch(`https://localhost:5001/api/tasks/${id}`, { method: 'DELETE' });
-    fetchTasks();
+    try {
+      await fetch(`http://localhost:5296/api/Tasks/${id}`, { method: 'DELETE' });
+      fetchTasks();
+    } catch (error) {
+      console.error('Error deleting task:', error);
+    }
   };
 
   return (
